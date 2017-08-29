@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui">
+   <head>
+       <link href="resource/css/StylClientes.css" rel="stylesheet" type="text/css"/>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+<form action="registrar" method="post" class="form-register animated lightSpeedIn">
+<h2 class="form-titulo">BAJAS/ CANCELACION DE SERVICIOS</h2>
+<div class="contenedor-inputs">
+    
+   
+    
+    <p:panelGrid>
+    <label>Codigo Cliente:<input type="codCliente" name="CodCliente" placeholder="" class="input-48" required=""/></label>
+    <br/>
+    <label >Nombre :<input type="text" name="apellidos" placeholder="" class="input-48" required=""/></label>   
+    <input type="submit" value="Buscar" class="btn-enviar" required=""/>
+
+       <br/>
+     <label > Internet :<input type="text" name="internet" placeholder="" class="input-100" required=""/></label>
+     <br/>
+        <label >Cable :<input type="text" name="cable" placeholder="" class="input-100" required=""/></label>
+        <br/>
+    </p:panelGrid>
+</div>
+             <div class="center">
+    <input type="submit" value="Baja" class="btn-enviar" required=""/>
+        <input type="submit" value="Regresar" class="btn-enviar" required="" onclick= "location='MenuPrincipal.xhtml'"/> 
+   </div>
+<br/>
+<div class="center">
+    <input type="submit" value="Promocion" class="btn-enviar" required="" onclick=""/> 
+   </div>
+</form>
+  
+    </body>
+</html>

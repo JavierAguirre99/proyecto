@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <link href="resource/css/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="resource/css/StylClientes.css" rel="stylesheet" type="text/css"/>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+<form action="registrar" method="post" class="form-register animated lightSpeedIn">
+<h2 class="form-titulo">RECLAMOS</h2>
+<div class="contenedor-inputs">
+    <p:panelGrid>
+       
+            <label>Numero de Instalacion :<input type="text" name="apellidos" placeholder="" class="input-10" required=""/></label>
+        <label>Estado de Servicio :<input type="text" name="fechaNac" placeholder="" class="input-10" required=""/></label>
+         <br/>
+          <label >Nombre del Cliente :<input type="text" name="apellido" placeholder="" class="input-10" required=""/></label>
+           <label >Incidencias similares<select name="status">    
+       <option value="activo" selected="selected">activo</option>
+       <option value="inactivo">inactivo</option>
+       <option value="moroso">moroso</option>
+   </select>
+        </label>
+         <br/>
+           <label >Telefono :<input type="text" name="direccion" placeholder="" class="input-10" required=""/></label>
+            <label>Tipo Reclamo<select name="status">    
+       <option value="activo" selected="selected">activo</option>
+       <option value="inactivo">inactivo</option>
+       <option value="moroso">moroso</option>
+   </select>
+        </label>
+           <br/>
+        <label >Codigo Usuario :<input type="text" name="direccion" placeholder="" class="input-10" required=""/></label>
+           
+  
+    <br/>
+     <label >Reclamo :<input type="text" name="servicioInternet" placeholder="" class="input-100" required=""/></label>
+    </p:panelGrid>
+</div>
+             <div class="center">
+    <input type="submit" value="Enviar" class="btn-enviar" required=""/>
+        <input type="submit" value="Salir" class="btn-enviar" required="" onclick= "location='MenuPrincipal.xhtml'"/> 
+   </div>
+</form>
+  
+    </body>
+</html>

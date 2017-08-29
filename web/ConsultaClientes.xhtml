@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <link href="resource/css/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="resource/css/StylClientes.css" rel="stylesheet" type="text/css"/>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+<form action="registrar" method="post" class="form-register animated lightSpeedIn">
+<h2 class="form-titulo">CONSULTA CLIENTES</h2>
+<label class="right">Estado <input type="codCliente" name="CodCliente" placeholder="" class="input-48" required=""/></label>
+    <br/>
+    <br/>
+    <br/>
+<div class="contenedor-inputs">
+    
+    <label>Codigo Cliente:<input type="codCliente" name="CodCliente" placeholder="" class="input-48" required=""/></label>
+    <br/>
+    <p:panelGrid>
+       
+            <label>Nombre :<input type="text" name="apellidos" placeholder="" class="input-10" required=""/></label>
+        <label>Fecha Nac :<input type="text" name="fechaNac" placeholder="" class="input-10" required=""/></label>
+         <label>Cel :<input type="text" name="cel" placeholder="" class="input-10" required=""/></label>
+         <br/>
+          <label >Apellido :<input type="text" name="apellido" placeholder="" class="input-10" required=""/></label>
+        <label >DPI :<input type="text" name="dpi" placeholder="" class="input-10" required=""/></label>
+         <label>NIT :<input type="text" name="nit" placeholder="" class="input-10" required=""/></label>
+         <br/>
+           <label >Direccion :<input type="text" name="direccion" placeholder="" class="input-10" required=""/></label>
+         <label>TEl :<input type="text" name="tel" placeholder="" class="input-10" required=""/></label>
+        
+           
+  
+    <br/>
+     <label >Servicios Internet :<input type="text" name="servicioInternet" placeholder="" class="input-100" required=""/></label>
+     <br/>
+        <label > Servicios Cable :<input type="text" name="servicioCable" placeholder="" class="input-100" required=""/></label>
+        <br/>
+         <label>Historial Facturacion :<input type="text" name="HistorialFacturacion" placeholder="" class="input-100" required=""/></label>
+        
+    </p:panelGrid>
+</div>
+             <div class="center">
+    <input type="submit" value="Consultar" class="btn-enviar" required=""/>
+        <input type="submit" value="Regresar" class="btn-enviar" required="" onclick= "location='MenuPrincipal.xhtml'"/> 
+           <input type="submit" value="Imprimir" class="btn-enviar" required=""/> 
+   </div>
+</form>
+  
+    </body>
+</html>
