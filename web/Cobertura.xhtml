@@ -6,40 +6,44 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:p="http://primefaces.org/ui">
-      <head>
-          <link href="resource/css/animate.css" rel="stylesheet" type="text/css"/>
-          <link href="resource/css/StylClientes.css" rel="stylesheet" type="text/css"/>
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <link href="resource/css/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="resource/css/StylClientes.css" rel="stylesheet" type="text/css"/>
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-<form action="registrar" method="post" class="form-register animated lightSpeedIn">
-<h2 class="form-titulo">COBERTURA</h2>
-<div class="contenedor-inputs">
-    <p:panelGrid>
-           <label >Departamento : <select name="status">    
-       <option value="activo" selected="selected">activo</option>
-       <option value="inactivo">inactivo</option>
-       <option value="moroso">moroso</option>
-   </select>
-        </label>
-         <br/>
-            <label>Municipio : <select name="status">    
-       <option value="activo" selected="selected">activo</option>
-       <option value="inactivo">inactivo</option>
-       <option value="moroso">moroso</option>
-   </select>
-        </label>
-         <div class="right">
-             <img src="resource/imagenes/mapa.png"/>
-         </div>
-    </p:panelGrid>
-</div>
-             <div class="center">
-        <input type="submit" value="Salir" class="btn-enviar" required="" onclick= "location='MenuPrincipal.xhtml'"/> 
-   </div>
-</form>
-  
-    </body>
+    </h:head>
+    <h:body>
+        <h:form  class="form-register animated lightSpeedIn">
+            <h2 class="form-titulo">COBERTURA</h2>
+            <div class="contenedor-inputs">
+                <p:panelGrid>
+                    <p:outputLabel value="Estatus"/>
+                    <p:selectOneMenu id="country2"  style="width:150px">
+                        <f:selectItem itemLabel="Activo" itemValue="Activo" />
+                        <f:selectItem itemLabel="Inactivo" itemValue="Inactivo" />
+                        <f:selectItem itemLabel="Moroso" itemValue="Moroso" />
+                    </p:selectOneMenu>
+                    <br/>
+                    <p:outputLabel value="Municipios"/>
+                    <p:selectOneMenu id="country1"  style="width:150px">
+                        <f:selectItem itemLabel="Activo" itemValue="Activo"  />
+                        <f:selectItem itemLabel="Inactivo" itemValue="Inactivo" />
+                        <f:selectItem itemLabel="Moroso" itemValue="Moroso" />
+
+                    </p:selectOneMenu>
+
+                    <div class="right">
+                        <img src="resource/imagenes/mapa.png"/>
+                    </div>
+                </p:panelGrid>
+            </div>
+            <div class="center">
+                <p:commandButton value="Salir" class="btn-enviar"  onclick= "location = 'MenuPrincipal.xhtml'"/> 
+            </div>
+        </h:form>
+
+    </h:body>
 </html>

@@ -6,41 +6,45 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:p="http://primefaces.org/ui">
-   <head>
-       <link href="resource/css/StylClientes.css" rel="stylesheet" type="text/css"/>
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <link href="resource/css/StylClientes.css" rel="stylesheet" type="text/css"/>
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-<form action="registrar" method="post" class="form-register animated lightSpeedIn">
-<h2 class="form-titulo">BAJAS/ CANCELACION DE SERVICIOS</h2>
-<div class="contenedor-inputs">
-    
-   
-    
-    <p:panelGrid>
-    <label>Codigo Cliente:<input type="codCliente" name="CodCliente" placeholder="" class="input-48" required=""/></label>
-    <br/>
-    <label >Nombre :<input type="text" name="apellidos" placeholder="" class="input-48" required=""/></label>   
-    <input type="submit" value="Buscar" class="btn-enviar" required=""/>
+    </h:head>
+    <h:body>
+        <h:form  class="form-register animated lightSpeedIn">
+            <h2 class="form-titulo">BAJAS/ CANCELACION DE SERVICIOS</h2>
+            <div class="contenedor-inputs">
 
-       <br/>
-     <label > Internet :<input type="text" name="internet" placeholder="" class="input-100" required=""/></label>
-     <br/>
-        <label >Cable :<input type="text" name="cable" placeholder="" class="input-100" required=""/></label>
-        <br/>
-    </p:panelGrid>
-</div>
-             <div class="center">
-    <input type="submit" value="Baja" class="btn-enviar" required=""/>
-        <input type="submit" value="Regresar" class="btn-enviar" required="" onclick= "location='MenuPrincipal.xhtml'"/> 
-   </div>
-<br/>
-<div class="center">
-    <input type="submit" value="Promocion" class="btn-enviar" required="" onclick=""/> 
-   </div>
-</form>
-  
-    </body>
+                <p:panelGrid>
+                    <p:outputLabel value="Codigo Codigo"/>
+                    <p:inputText id="cliente" placeholder="Ingrese codigo" class="input-48" required=""/>
+                    <br/>
+                    <p:outputLabel value="Nombre"/>
+                    <p:inputText  placeholder="" class="input-48" required=""/>
+
+                    <p:commandButton  value="Buscar" class="btn-enviar" />
+
+                    <br/>
+                    <p:outputLabel value="Internet"/>
+                    <p:inputText  placeholder="Internet" class="input-100" required=""/>
+                    <br/>
+                    <p:outputLabel value="Cable"/>
+                    <p:inputText  placeholder="Cable" class="input-100" required=""/>
+                    <br/>
+                </p:panelGrid>
+            </div>
+            <div class="center">
+                <p:commandButton value="Baja" class="btn-enviar" />
+                <p:commandButton value="Reresar" class="btn-enviar"  onclick= "location = 'MenuPrincipal.xhtml'"/> 
+            </div>
+            <br/>
+            <div class="center">
+                <p:commandButton value="Promocion" class="btn-enviar" onclick=""/> 
+            </div>
+        </h:form>
+
+    </h:body>
 </html>
