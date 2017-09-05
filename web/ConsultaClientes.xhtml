@@ -17,8 +17,8 @@ and open the template in the editor.
     <h:body>
         <h:form  class="form-register animated lightSpeedIn">
             <h2 class="form-titulo">CONSULTA CLIENTES</h2>
-            <p:outputLabel value="Estado" class="right"/> 
-            <p:inputText  type="codCliente" class="right" placeholder="" class="input-48"
+            <p:outputLabel value="Estado" class="right" for="code"/> 
+            <p:inputText  id="code" type="codCliente" class="right" placeholder="" />
                           <br/>
                 <br/>
                 <br/>
@@ -29,34 +29,34 @@ and open the template in the editor.
                     <br/>
                     <p:panelGrid>
 
-                        <label>Nombre :</label>
-                        <input type="text" name="apellidos" placeholder="" class="input-10" required=""/>
+                        <p:outputLabel value="Nombre:" for="nombre"/>
+                        <p:inputText id="nombre" placeholder="" class="input-10" required=""/>
 
-                        <label>Fecha Nac :</label>
-                        <input type="text" name="fechaNac" placeholder="" class="input-10" required=""/>
-                        <label>Cel :</label>
-                        <input type="text" name="cel" placeholder="" class="input-10" required=""/>
+                        <p:outputLabel value="Fecha Nac:" for="fechanac"/>
+                        <p:inputText id="fechanac" placeholder="" class="input-10" required=""/>
+                        <p:outputLabel value="Cel:" for="cel"/>
+                        <p:inputText id="cel" placeholder="" class="input-10" required=""/>
                         <br/>
-                        <label >Apellido :</label>
-                        <input type="text" name="apellido" placeholder="" class="input-10" required=""/>
-                        <label >DPI :</label>
-                        <input type="text" name="dpi" placeholder="" class="input-10" required=""/>
-                        <label>NIT :</label>
-                        <input type="text" name="nit" placeholder="" class="input-10" required=""/>
+                        <p:outputLabel value="Apellido:" for="apellido"/>
+                        <p:inputText id="apellido" placeholder="" class="input-10" required=""/>
+                        <p:outputLabel value="DPI:" for="dpi"/>
+                        <p:inputText id="dpi" placeholder="" class="input-10" required=""/>
+                        <p:outputLabel value="NIT:" for="nit"/>
+                        <p:inputText id="nit" placeholder="" class="input-10" required=""/>
                         <br/>
-                        <label >Direccion : </label>
-                        <input type="text" name="direccion" placeholder="" class="input-10" required=""/>
-                        <label>TEl :</label>
-                        <input type="text" name="tel" placeholder="" class="input-10" required=""/>
+                        <p:outputLabel value="Direccion" for="direccion"/>
+                        <p:inputText id="direccion" placeholder="" class="input-10" required=""/>
+                        <p:outputLabel value="Telefono" for="tel"/>
+                        <p:inputText id="tel" placeholder="" class="input-10" required=""/>
                         <br/>
-                        <label >Servicios Internet :</label>
-                        <input type="text" name="servicioInternet" placeholder="" class="input-100" required=""/>
+                        <p:outputLabel value="Servicios de Intenet" for="Serviciosint"/>
+                        <p:inputText id="Serviciosint" placeholder="" class="input-10" required=""/>
                         <br/>
-                        <label > Servicios Cable :</label>
-                        <input type="text" name="servicioCable" placeholder="" class="input-100" required=""/>
+                        <p:outputLabel value="Servicios De Cable" for="servicioscable"/>
+                        <p:inputText id="servicioscable" placeholder="" class="input-10" required=""/>
                         <br/>
-                        <label>Historial Facturacion :</label>
-                        <input type="text" name="HistorialFacturacion" placeholder="" class="input-100" required=""/>
+                        <p:outputLabel value="Historial de Facturacion" for="historial"/>
+                        <p:inputText id="historial" placeholder="" class="input-10" required=""/>
                     </p:panelGrid>
                 </div>
                 <div class="center">
