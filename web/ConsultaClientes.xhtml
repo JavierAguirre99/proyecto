@@ -17,53 +17,35 @@ and open the template in the editor.
     <h:body>
         <h:form  class="form-register animated lightSpeedIn">
             <h2 class="form-titulo">CONSULTA CLIENTES</h2>
-            <p:outputLabel value="Estado" class="right" for="code"/> 
-            <p:inputText  id="code" type="codCliente" class="right" placeholder="" />
-                          <br/>
+            <label class="right"> CODIGO <p:inputText  placeholder="" class="input-48" value="Estado" /> </label>
+            <br/>
+            <br/>
+            <br/>
+            <div class="contenedor-inputs">
+                <label> Codigo Cliente: <p:inputText  placeholder="Ingrese" class="input-48" required=""/> </label>
                 <br/>
+                <label> Nombre: <p:inputText id="nombre" placeholder="" class="input-10" required="" /> </label>
+                <label> Fecha Nac:<p:inputText id="fechanac" placeholder="" class="input-10" required=""/> </label>
+                <label> Cel: <p:inputText id="cel" placeholder="" class="input-10" required=""/> </label>
                 <br/>
-                <div class="contenedor-inputs">
-
-                    <p:outputLabel value="Codigo Cliente:"/>
-                    <p:inputText  placeholder="Ingrese" class="input-48" required=""/>
-                    <br/>
-                    <p:panelGrid>
-
-                        <p:outputLabel value="Nombre:" for="nombre"/>
-                        <p:inputText id="nombre" placeholder="" class="input-10" required=""/>
-
-                        <p:outputLabel value="Fecha Nac:" for="fechanac"/>
-                        <p:inputText id="fechanac" placeholder="" class="input-10" required=""/>
-                        <p:outputLabel value="Cel:" for="cel"/>
-                        <p:inputText id="cel" placeholder="" class="input-10" required=""/>
-                        <br/>
-                        <p:outputLabel value="Apellido:" for="apellido"/>
-                        <p:inputText id="apellido" placeholder="" class="input-10" required=""/>
-                        <p:outputLabel value="DPI:" for="dpi"/>
-                        <p:inputText id="dpi" placeholder="" class="input-10" required=""/>
-                        <p:outputLabel value="NIT:" for="nit"/>
-                        <p:inputText id="nit" placeholder="" class="input-10" required=""/>
-                        <br/>
-                        <p:outputLabel value="Direccion" for="direccion"/>
-                        <p:inputText id="direccion" placeholder="" class="input-10" required=""/>
-                        <p:outputLabel value="Telefono" for="tel"/>
-                        <p:inputText id="tel" placeholder="" class="input-10" required=""/>
-                        <br/>
-                        <p:outputLabel value="Servicios de Intenet" for="Serviciosint"/>
-                        <p:inputText id="Serviciosint" placeholder="" class="input-10" required=""/>
-                        <br/>
-                        <p:outputLabel value="Servicios De Cable" for="servicioscable"/>
-                        <p:inputText id="servicioscable" placeholder="" class="input-10" required=""/>
-                        <br/>
-                        <p:outputLabel value="Historial de Facturacion" for="historial"/>
-                        <p:inputText id="historial" placeholder="" class="input-10" required=""/>
-                    </p:panelGrid>
-                </div>
-                <div class="center">
-                    <p:commandButton value="Consultar" class="btn-enviar" />
-                    <p:commandButton value="Regresar" class="btn-enviar"  onclick= "location = 'MenuPrincipal.xhtml'"/> 
-                    <p:commandButton value="Imprimir" class="btn-enviar" /> 
-                </div>
+                <label> Apellido:<p:inputText id="apellido" placeholder="" class="input-10" required=""/> </label>
+                <label> DPI: <p:inputText id="dpi" placeholder="" class="input-10" required=""/> </label>
+                <label> NIT:<p:inputText id="nit" placeholder="" class="input-10" required=""/> </label>
+                <br/>
+                <label> Direccion: <p:inputText id="direccion" placeholder="" class="input-10" required=""/> </label>
+                <label>Telefono: <p:inputText id="tel" placeholder="" class="input-10" required=""/> </label>
+                <br/>
+                <label> Servicios de Intenet: <p:inputText id="Serviciosint" placeholder="" class="input-10" required=""/></label>
+                <br/>
+                <label> Servicios De Cable  <p:inputText id="servicioscable" placeholder="" class="input-10" required=""/></label>
+                <br/>
+                <label> Historial: <p:inputText id="historial" placeholder="" class="input-10" required=""/> </label>
+            </div>
+            <div class="center">
+                <p:commandButton value="Consultar" class="btn-enviar" />
+                <p:commandButton value="Regresar" class="btn-enviar"  onclick= "location = 'MenuPrincipal.xhtml'"/> 
+                <p:commandButton value="Imprimir" class="btn-enviar" /> 
+            </div>
         </h:form>
 
     </h:body>

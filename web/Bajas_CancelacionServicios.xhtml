@@ -18,23 +18,26 @@ and open the template in the editor.
             <h2 class="form-titulo">BAJAS/ CANCELACION DE SERVICIOS</h2>
             <div class="contenedor-inputs">
 
-                <p:panelGrid>
+                
                     <p:outputLabel value="Codigo Codigo"/>
                     <p:inputText id="cliente" placeholder="Ingrese codigo" class="input-48" required=""/>
                     <br/>
                     <p:outputLabel value="Nombre"/>
                     <p:inputText  placeholder="" class="input-48" required=""/>
+                    <br/>
+                    <br/>
 
-                    <p:commandButton  value="Buscar" class="btn-enviar" />
-
+                    <p:commandButton  value="Buscar" style="background-color: #B4045F;color: white" />
+                    <br/>
+                    <br/>
                     <br/>
                     <p:outputLabel value="Internet"/>
-                    <p:inputText  placeholder="Internet" class="input-100" required=""/>
+                        <p:inputText  placeholder="Internet" class="input-100" required=""/>
                     <br/>
                     <p:outputLabel value="Cable"/>
                     <p:inputText  placeholder="Cable" class="input-100" required=""/>
                     <br/>
-                </p:panelGrid>
+                
             </div>
             <div class="center">
                 <p:commandButton value="Baja" class="btn-enviar" />
