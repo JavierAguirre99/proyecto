@@ -7,66 +7,70 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <link href="resource/css/animate.css" rel="stylesheet" type="text/css"/>
-        <link href="resource/css/StylClientes.css" rel="stylesheet" type="text/css"/>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </h:head>
-    <h:body>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+  <h:head>
+    <link href="resource/css/animate.css" rel="stylesheet" type="text/css"/>
+    <link href="resource/css/StylClientes.css" rel="stylesheet" type="text/css"/>
+    <title>TODO supply a title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </h:head>
+  <h:body>
+
+    <h:form class="form-register animated lightSpeedIn">
+      <h2 class="form-titulo">CLIENTES</h2>
+      <div class="contenedor-inputs">
+        <p:inputText value="codCliente" p:placeholder="codigoCliente" class="input-48" required=""/>
+        <p:inputText value="hola"/>
+        <br/>
         
-        <form  method="post" class="form-register animated lightSpeedIn">
-            <h2 class="form-titulo">CLIENTES</h2>
-            <div class="contenedor-inputs">
-                <label>Codigo:<input type="codCliente" name="CodCliente" placeholder="" class="input-48" required=""/></label>
-                <br/>
-                <p:panelGrid>
-                    <div class="right">
-                        <label class="right">Apellidos :<input type="text" name="apellidos" placeholder="" class="input-48" required=""/></label>
-                        <br/>
-                        <label class="right">Nit :<input type="text" name="nit" placeholder="" class="input-48" required=""/></label>
-                        <br/>
-                        <label class="right">Categoria :<input type="text" name="fecha" placeholder="" class="input-48" required=""/></label>
-                        <br/>
+          <p:inputText value="hola"/>
+          <div class="right">
+            <p:inputText  value="apellidos" p:placeholder="apellidos" class="input-48" required=""/>
+            <br/>
+            <p:inputText value="Nit" p:placeholder="" class="input-48" required=""/>
+            <br/>
+            <p:inputText value="Categoria" p:placeholder="categoria" class="input-48" required=""/>
+            <br/>
 
-                        <img src="resource/imagenes/man.png" width="150" height="150" alt="usuario"/>
+            <img src="resource/imagenes/man.png" width="150" height="150" alt="usuario"/>
 
-                    </div>
-                    <div class="Left">
-                        <label class="right">Nombres :<input type="text" name="nombre" placeholder="" class="input-48" required=""/></label>
+          </div>
+          <div class="Left">
+            <p:inputText value="Nombre" p:placeholder="nombre" class="input-48" required=""/>
 
-                        <br/>
-                        <label class="right">Direccion :<input type="text" name="direccion" placeholder="" class="input-48" required=""/></label>
+            <br/>
+            <p:inputText value="Direccion" p:placeholder="direccion" class="input-48" required=""/>
 
-                        <br/>
-                        <label class="right">Fecha de Nacimiento:<input type="text" name="fecha" placeholder="" class="input-48" required=""/></label>
-                        <br/>
-                        <label class="right">DPI :<input type="text" name="dpi" placeholder="" class="input-48" required=""/></label>
-                        <br/>
-                        <label class="right">Telefono Casa : <input type="text" name="telcasa" placeholder="" class="input-48" required=""/></label>
-                        <br/>
-                        <label class="right">Telefono Celular<input type="text" name="telCelular" placeholder="" class="input-48" required=""/></label>
-                        <br/>
-                        <label class="Left">Status:<select name="status">    
-                                <option value="activo" selected="selected">activo</option>
-                                <option value="inactivo">inactivo</option>
-                                <option value="moroso">moroso</option>
-                            </select>
-                        </label>
-                    </div>
+            <br/>
+            <p:inputText value="Fecha_Nacimiento" p:placeholder="fecha_nacimiento" class="input-48" required=""/>
+            <br/>
+            <p:inputText value="Dpi" p:placeholder="dpi" class="input-48" required=""/>
+            <br/>
+            <p:inputText value="Telefono_Casa" p:placeholder="telefono_casa" class="input-48" required=""/>
+            <br/>
+            <p:inputText value="Celular" p:placeholder="celular" class="input-48" required=""/>
+            <br/>
+            <p:outputLabel value="Status"/>
+            <p:selectOneMenu id="country1"  style="width:150px">
+              <f:selectItem itemLabel="Activo" itemValue="Activo"  />
+              <f:selectItem itemLabel="Inactivo" itemValue="Inactivo" />
+              <f:selectItem itemLabel="Moroso" itemValue="Moroso" />
 
-                </p:panelGrid>
+            </p:selectOneMenu>
+          </div>
+
+       
 
 
 
 
-            </div>
-            <div class="center">
-                <h:button  value="Guardar" class="btn-enviar" />
-                <h:button value="Salir" class="btn-enviar"  onclick= "location = 'MenuPrincipal.xhtml'"/> 
-            </div>
-        </form>
+      </div>
+      <div class="center">
+        <p:button  value="Guardar" class="btn-enviar" />
+        <p:button value="Salir" class="btn-enviar"  onclick= "location = 'facesMenuPrincipal.xhtml'"/> 
+      </div>
+    </h:form>
 
-    </h:body>
+  </h:body>
 </html>
