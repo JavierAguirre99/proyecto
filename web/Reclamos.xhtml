@@ -7,50 +7,92 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
   <h:head>
     <link href="resource/css/animate.css" rel="stylesheet" type="text/css"/>
     <link href="resource/css/StylClientes.css" rel="stylesheet" type="text/css"/>
     <title>TODO supply a title</title>
+ 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </h:head>
   <h:body>
+    <h:panelGrid columns="2">
+   
+    <main>
+      <div class="content-all">
+            <nav class="menu">
+                <ul>
+                    <li class="retraso-1"><a href="faces/clientes.xhtml">Clientes</a></li>
+                    <li><a href="ConsultaClientes.xhtml">Consultas</a></li>
+                    <li>Modificar Servicios</li>
+                    <li><a href="Bajas_CancelacionServicios.xhtml">Bajas</a></li>
+                    <li><a href="faces/Reclamos.xhtml">Reclamos</a></li>
+                    <li>Promociones</li>
+                    <li><a href="Cobertura.xhtml">Coberturas</a></li>
+                    <li>Contratos</li>
+                    <li>Renovacion de Servicios</li>
+                    <li><a href="MenuPrincipal1.xhtml">Interfaz Cliente</a></li>
+                    <li>Pagos</li>
+                    <li>Registro de Usuarios</li>
+                    <li>Modificacion de Usuarios</li>
+                    <li>Salir</li>
+                </ul>
+            </nav>
+             
+       
+        
+        
+      </div>
+    
+    </main>
+   
+    
     <h:form class="form-register animated lightSpeedIn">
-      <h2 class="form-titulo">RECLAMOS</h2>
-      <div class="contenedor-inputs">
-        <p:panelGrid>
-
-          <label>Numero de Instalacion :<h:inputText value="Numero_de_Instalacion" p:placeholder="numero_de_instalacion" class="input-10" required=""/></label>
-          <label>Estado de Servicio :<input type="text" name="fechaNac" placeholder="" class="input-10" required=""/></label>
-          <br/>
-          <label >Nombre del Cliente :<input type="text" name="apellido" placeholder="" class="input-10" required=""/></label>
-          <label >Incidencias similares<select name="status">    
-              <option value="activo" selected="selected">activo</option>
-              <option value="inactivo">inactivo</option>
-              <option value="moroso">moroso</option>
-            </select>
+      <h1>RECLAMOS</h1>
+     
+        
+      <div class="contenedor-inputs, Left">
+   
+        <h:panelGrid columns="4" >
+          <label>No. Instalacion<p:inputText value="" p:placeholder=""  required=""/></label>
+          <label>Estado Servicio:<p:inputText value="" p:placeholder=""  required=""/></label>
+          <label >Nombre del Cliente:<p:inputText value="" p:placeholder=""  required=""/></label>
+          <label >Incidencias similares  
+              <p:selectOneMenu id="country1"  style="width:150px">
+              <f:selectItem itemLabel="Activo" itemValue="Activo"  />
+              <f:selectItem itemLabel="Inactivo" itemValue="Inactivo" />
+              <f:selectItem itemLabel="Moroso" itemValue="Moroso" />
+            </p:selectOneMenu>
           </label>
-          <br/>
-          <label >Telefono :<input type="text" name="direccion" placeholder="" class="input-10" required=""/></label>
-          <label>Tipo Reclamo<select name="status">    
-              <option value="activo" selected="selected">activo</option>
-              <option value="inactivo">inactivo</option>
-              <option value="moroso">moroso</option>
-            </select>
+       
+        
+       
+          
+          <label >Telefono :<p:inputText value="" p:placeholder=""  required=""/></label>
+          <label>Tipo Reclamo   
+               <p:selectOneMenu id="country2"  style="width:150px">
+              <f:selectItem itemLabel="Activo" itemValue="Activo"  />
+              <f:selectItem itemLabel="Inactivo" itemValue="Inactivo" />
+              <f:selectItem itemLabel="Moroso" itemValue="Moroso" />
+              </p:selectOneMenu>
           </label>
-          <br/>
-          <label >Codigo Usuario :<input type="text" name="direccion" placeholder="" class="input-10" required=""/></label>
-
-
-          <br/>
-          <label >Reclamo :<input type="text" name="servicioInternet" placeholder="" class="input-100" required=""/></label>
-        </p:panelGrid>
+            <br/>
+   
+          <label >Codigo Usuario :<p:inputText value="" p:placeholder=""  required=""/></label>
+            <br/>
+          <label >Reclamo :<p:inputText value="" p:placeholder=""  required=""/></label>
+          <p:button value="Enviar" class="btn-enviar"/>
+        <p:button  value="Salir" class="btn-enviar" onclick= "location = 'faces/MenuPrincipal.xhtml'"/> 
+      </h:panelGrid>
       </div>
-      <div class="center">
-        <input type="submit" value="Enviar" class="btn-enviar" required=""/>
-        <input type="submit" value="Salir" class="btn-enviar" required="" onclick= "location = 'MenuPrincipal.xhtml'"/> 
-      </div>
+      
+        
+      
+     
+      
     </h:form>
-
+     
+</h:panelGrid>
   </h:body>
 </html>
