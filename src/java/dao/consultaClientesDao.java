@@ -16,7 +16,7 @@ import modelo.ConsultaClientes;
  * @author Javier
  */
 public class consultaClientesDao extends DAO{
-    public List<ConsultaClientes> listar() throws Exception {
+    public List<ConsultaClientes> listar(ConsultaClientes codigo) throws Exception {
         List<ConsultaClientes> lista;
         ResultSet result;
 
@@ -26,7 +26,9 @@ public class consultaClientesDao extends DAO{
                     + "from contrataciones inner join clientes on contrataciones.id_cliente = clientes.id_cliente \n"
                     + "inner join paquetes on contrataciones.id_paquete = paquetes.id_paquete\n"
                     + "inner join tipos_servicios on paquetes.id_tiposervicio = tipos_servicios.id_tiposervicio\n"
-                    + "where clientes.id_cliente=7 and tipos_servicios.nombre='Cable';");
+                    + "where clientes.id_cliente=?");
+           System.out.println(codigo.getId_cliente());
+                    st.setInt(1, codigo.getId_cliente());
             
             result = st.executeQuery();
             lista = new ArrayList();

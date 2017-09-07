@@ -10,20 +10,33 @@ import modelo.ConsultaClientes;
 @ManagedBean
 @ViewScoped
 public class consultaClientesBean {
-    private List<ConsultaClientes> lstpacientes;
+  private ConsultaClientes cli=new ConsultaClientes();
 
-    public List<ConsultaClientes> getLstpacientes() {
-        return lstpacientes;
-    }
+  public ConsultaClientes getCli() {
+    return cli;
+  }
 
-    public void setLstpacientes(List<ConsultaClientes> lstpacientes) {
-        this.lstpacientes = lstpacientes;
-    }
+  public void setCli(ConsultaClientes cli) {
+    this.cli = cli;
+  }
+  
+    private List<ConsultaClientes> lstclientes;
+
+  public List<ConsultaClientes> getLstclientes() {
+    return lstclientes;
+  }
+
+  public void setLstclientes(List<ConsultaClientes> lstclientes) {
+    this.lstclientes = lstclientes;
+  }
+
+    
+    
     public void listar() throws Exception{
         consultaClientesDao dao = new consultaClientesDao();
         
         try{
-            lstpacientes=dao.listar();
+            lstclientes=dao.listar(cli);
         }catch(Exception e){
             throw e;
         }
