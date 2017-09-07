@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1> Consulta Clientes</h1>
+        <h:form>
+            <h:panelGrid columns="4">
+                <p:outputLabel value="Codigo:"/>
+                <p:inputText id="Codigo" value="#{clientesBean.cliente.id_cliente}"/>
+                <p:outputLabel value="Nombre:" />
+                <p:inputText id="Nombre" value="#{clientesBean.cliente.nombre}"/>
+                <p:outputLabel value="Apellido:"/>
+                <p:inputText id="Apellido" value="#{clientesBean.cliente.apellido}"/>
+                <p:outputLabel value="Direccion:"/>
+                <p:inputText id="Direccion" value="#{clientesBean.cliente.direccion}"/>
+                <p:outputLabel value="Nit:" />
+                <p:inputMask  mask="9999999" id="nit" value="#{clientesBean.cliente.nit}"/>
+                <p:outputLabel value="Dpi:"/>
+                <p:inputMask  mask="99999999" id="dpi" value="#{clientesBean.cliente.dpi}"/>
+                <p:outputLabel value="Fecha Nac"/>
+                <p:inputText id="fechanac" value="#{clientesBean.cliente.fechanac}"/>
+                <p:outputLabel value="Telefono:"/>
+                <p:inputMask  mask="99999999" value="#{clientesBean.cliente.telefono}"/>
+                <p:outputLabel value="Celular:"/>
+                <p:inputMask  mask="99999999"  id="Celular" value="#{clientesBean.cliente.celura}"/>
+
+            </h:panelGrid>
+            <center>
+                <h2> Servcios de Cable! </h2>
+                <p:dataTable id="data" value="#{consultaClientesBean.lstpacientes}" var="paciente" scrollable="true" scrollHeight="150">
+                    <p:column  headerText="Numero Contratacion">
+                        <p:outputLabel value="#{paciente.id_contratacion}"/>
+                    </p:column>
+
+                    <p:column headerText="Id Cliente">
+                        <p:outputLabel value="#{paciente.id_cliente}"/>
+                    </p:column>
+
+                    <p:column headerText="Nombre">
+                        <p:outputLabel value="#{paciente.nombre}"/>
+                    </p:column>
+
+                    <p:column headerText="Id Paquete">
+                        <p:outputLabel value="#{paciente.id_paquete}"/>
+                    </p:column>
+
+                    <p:column headerText="Nombre Paquete">
+                        <p:outputLabel value="#{paciente.nom_paquete}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Servicio">
+                        <p:outputLabel value="#{paciente.tipo_servicio}"/>
+                    </p:column>
+                </p:dataTable>
+
+            </center>
+            <p:commandButton value="Consultar"  actionListener="#{consultaClientesBean.listar()}" update="data" />
+            <p:commandButton value="Regresar"  />
+            <p:commandButton value="Cancelar"  />
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,16 +1,18 @@
 package dao;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import modelo.Clientes;
+import modelo.ConsultaClientes;
 
-public class ClientesDAO extends DAO{
-    public void registrar(Clientes cliente)throws Exception{
-        try{
-            System.out.println(cliente.getDpi());
-            System.out.println(cliente.getCelura());
-            System.out.println(cliente.getNit());
+public class ClientesDAO extends DAO {
+
+    public void registrar(Clientes cliente) throws Exception {
+        try {
             this.conectar();
-            PreparedStatement st= this.getCn().prepareStatement("insert into clientes values(?,?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement st = this.getCn().prepareStatement("insert into clientes values(?,?,?,?,?,?,?,?,?,?,?,?)");
             st.setInt(1, cliente.getId_cliente());
             st.setString(2, cliente.getNombre());
             st.setString(3, cliente.getApellido());
@@ -23,11 +25,12 @@ public class ClientesDAO extends DAO{
             st.setInt(10, cliente.getId_categoria());
             st.setInt(11, cliente.getId_estado());
             st.setInt(12, cliente.getId_tipo_cliente());
-            st.executeUpdate();            
-        }catch(Exception e){
+            st.executeUpdate();
+        } catch (Exception e) {
             throw e;
-        }finally{
+        } finally {
             this.cerrar();
         }
     }
+
 }
