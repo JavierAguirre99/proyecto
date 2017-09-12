@@ -21,7 +21,7 @@ public class DAO
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-            cn = DriverManager.getConnection("jdbc:mysql://192.168.22.48:3306/tvinter?user=root&password=intecap");
+            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tvinter?user=root&password=root");
             System.out.println("COnectado");
         }catch(Exception e)
         {

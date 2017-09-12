@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <center>
+            <h1>Empleados</h1>
+        </center>
+
+        <h:form id="frm">
+            <script type="text/javascript">
+                function limpiarForm() {
+                    document.getElementById("frm").reset();
+                }
+            </script>
+            <center>
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="Codigo:"/>
+                    <p:inputText id="txtCodigo" value="#{empleadosBean.empleado.id_empleado}"/>
+                    <p:outputLabel value="Nombre:"/>
+                    <p:inputText id="txtNombre" value="#{empleadosBean.empleado.nombre}"/>
+                    <p:outputLabel value="Apellido:"/>
+                    <p:inputText id="txtApellido" value="#{empleadosBean.empleado.apellido}"/>
+                    <p:outputLabel value="Telefono"/>
+                    <p:inputText id="txtTelefono" value="#{empleadosBean.empleado.telefono}"/>
+                    <p:outputLabel value="Direccion:"/>
+                    <p:inputText id="txtDireccion" value="#{empleadosBean.empleado.direccion}"/>
+                    <p:outputLabel value="Id Puesto:"/>
+                    <p:inputText id="txtIdpuesto" value="#{empleadosBean.empleado.id_puesto}"/>
+                    <p:outputLabel value="Sueldo:"/>
+                    <p:inputText id="txtSueldo" value="#{empleadosBean.empleado.sueldo}"/>
+
+                </h:panelGrid>
+
+                <p:commandButton value="Nuevo" icon="ui-icon-document" action="#{empleadosBean.registrarEmpleados()}" update="data" oncomplete="limpiarForm()"/>
+                <p:commandButton value="Mostrar" icon="ui-icon-folder-open" action="#{empleadosBean.listarEmpleados()}" update="data"/>
+
+
+                <p:dataTable id="data" value="#{empleadosBean.lstEmpleados}" var="empleados" scrollable="true" scrollHeight="150">
+                    <p:column  headerText="Codigo">
+                        <p:outputLabel value="#{empleados.id_empleado}"/>
+                    </p:column>
+
+                    <p:column headerText="Nombre">
+                        <p:outputLabel value="#{empleados.nombre}"/>
+                    </p:column>
+
+                    <p:column headerText="Apellido">
+                        <p:outputLabel value="#{empleados.apellido}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Telefono">
+                        <p:outputLabel value="#{empleados.telefono}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Direccion">
+                        <p:outputLabel value="#{empleados.direccion}"/>
+                    </p:column>
+                    
+                     <p:column headerText="Id Puesto">
+                         <p:outputLabel value="#{empleados.id_puesto}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Sueldo">
+                        <p:outputLabel value="#{empleados.sueldo}"/>
+                    </p:column>
+
+
+                    <p:column>
+                        <p:commandButton value="Modificar"  icon="ui-icon-pencil" actionListener="#{empleadosBean.leerIDEmpleados(empleados)}" oncomplete="PF('wdlgDatos').show();" update=":dlgDatos"/>
+
+                    </p:column>
+                    <p:column>
+                        <p:commandButton value="Eliminar" style="background-color:red" icon="ui-icon-scissors " actionListener="#{empleadosBean.eliminar(empleados)}" update="data"/>
+                    </p:column>
+                </p:dataTable>
+
+            </center>
+        </h:form>
+
+        <p:dialog header="Datos" widgetVar="wdlgDatos" id="dlgDatos">
+            <h:form>
+                <center>
+                    <h:panelGrid columns="1">
+                        <p:outputLabel value="Codigo:"/>
+                        <p:inputText   id="zzz" value="#{empleadosBean.empleado.id_empleado}"/>
+                        <p:outputLabel value="Nombre:"/>
+                        <p:inputText   id="rrr" value="#{empleadosBean.empleado.nombre}"/>
+                        <p:outputLabel value="Apellido:"/>
+                        <p:inputText   id="eee" value="#{empleadosBean.empleado.apellido}"/>
+                        <p:outputLabel value="Telefono"/>
+                        <p:inputText   id="qqq" value="#{empleadosBean.empleado.telefono}"/>
+                        <p:outputLabel value="Direccion:"/>
+                        <p:inputText  id="www" value="#{empleadosBean.empleado.direccion}"/>
+                        <p:outputLabel value="id Puesto"/>
+                        <p:inputText   id="gffg" value="#{empleadosBean.empleado.id_puesto}"/>
+                        <p:outputLabel value="Sueldo"/>
+                        <p:inputText   id="qqqfdsfs" value="#{empleadosBean.empleado.sueldo}"/>
+                        
+                    </h:panelGrid>
+                </center>    
+                <p:commandButton style="background-color:darkcyan" icon="ui-icon-disk" value="Modificar" actionListener="#{empleadosBean.modificarEmpleados()}" oncomplete="PF('wdlgDatos').hide();" update=":frm:data"/>
+                <p:commandButton style="background-color: greenyellow" icon=" ui-icon-cancel" value="Cancelar" immediate="true" oncomplete="PF('wdlgDatos').hide();"/>
+
+            </h:form>
+        </p:dialog>
+    </h:body>
+</html>
+

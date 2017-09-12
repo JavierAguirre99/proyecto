@@ -15,37 +15,48 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <h:form  class="form-register animated lightSpeedIn">
-            <h2 class="form-titulo">BAJAS/ CANCELACION DE SERVICIOS</h2>
-            <div class="contenedor-inputs">
 
-                
-                    <p:outputLabel value="Codigo Codigo"/>
-                    <p:inputText id="cliente" placeholder="Ingrese codigo" class="input-48" required=""/>
-                    <br/>
-                    <p:outputLabel value="Nombre"/>
-                    <p:inputText  placeholder="" class="input-48" required=""/>
-                    <br/>
-                    <br/>
+            <center>
+                <h2>Bajas y cancelaciones</h2>
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="codigo Del Cliente"/>
+                    <p:inputText />
 
-                    <p:commandButton  value="Buscar" style="background-color: #B4045F;color: white" />
-                    <br/>
-                    <br/>
-                    <br/>
-                    <p:outputLabel value="Internet"/>
-                        <p:inputText  placeholder="Internet" class="input-100" required=""/>
-                    <br/>
-                    <p:outputLabel value="Cable"/>
-                    <p:inputText  placeholder="Cable" class="input-100" required=""/>
-                    <br/>
-            </div>
-            <div class="center">
-                <p:commandButton value="Baja" class="btn-enviar" />
-                <p:commandButton value="Reresar" class="btn-enviar"  onclick= "location = 'MenuPrincipal.xhtml'"/> 
-            </div>
-            <br/>
-            <div class="center">
-                <p:commandButton value="Promocion" class="btn-enviar" onclick=""/> 
-            </div>
+                    <p:outputLabel value="Nombre Del Cliente"/>
+                    <p:inputText />
+
+
+                    <p:column/>
+                    <p:commandButton value="Buscar"/>
+                </h:panelGrid>
+                <h2>Internet</h2>
+                <p:dataTable id="internet"  var="paciente" scrollable="true" scrollHeight="150">
+                    <p:column  headerText="Numero de Contratacion">
+                        <p:outputLabel />
+                    </p:column>
+
+                    <p:column headerText="Fecha_contratacion">
+                        <p:outputLabel />
+                    </p:column>
+
+                    <p:column headerText="Fecha_renovacion">
+                        <p:outputLabel />
+                    </p:column>
+
+                    <p:column headerText="fecha_culminacion">
+                        <p:outputLabel />
+                    </p:column>
+
+                    <p:column headerText="id_cliente">
+                        <p:outputLabel />
+                    </p:column>
+
+                    <p:column headerText="id_paquete">
+                        <p:outputLabel />
+                    </p:column>
+                </p:dataTable>
+                <h2>Cable</h2>
+            </center>
         </h:form>
 
     </h:body>
