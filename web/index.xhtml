@@ -17,9 +17,9 @@
                     <div class="content-login" id="form-login">
 
                         <h3 class="animated bounceInDown">Login</h3>
-                        <p:inputText p:placeholder="Usuario" class="animated shake"/>
-                        <p:password p:placeholder="Contraseña" class="animated shake"/>
-                        <p:commandButton  value="iniciar" class="animated shake retraso-1" onclick="location='Bienvenido.xhtml'"/>
+                        <p:inputText p:placeholder="Usuario"  value="#{usuariosBean.usuario.nombre}" class="animated shake"/>
+                        <p:password p:placeholder="Contraseña"  value="#{usuariosBean.usuario.contraseña}" class="animated shake"/>
+                        <p:commandButton  value="iniciar" class="animated shake retraso-1" action="#{usuariosBean.listar()}"/>
                         <p>¿Aun no te has registrado? <a href="#form-register">Registrate aquí</a></p>
                     </div>
                     <div class="content-register" id="form-register">
