@@ -5,21 +5,21 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
-
     </h:head>
     <h:body>
-        <h1> Consulta Clientes</h1>
+        <h:form  class="form-register animated lightSpeedIn">
 
-        <h:form id="form">
-            <h:panelGrid columns="3">
-                <p:outputLabel value="Codigo:"/>
-                <p:inputText id="Codigo" value="#{consultaClientesBean.cli.id_cliente}"/>
-                <p:commandLink class="btn-enviar"  actionListener="#{consultaClientesBean.listar()}" value="Datos Interesantes del Cliente"    oncomplete="PF('dlg2').show();" update=":data2"/>
-
-
-            </h:panelGrid>
             <center>
-                <h2> Servcios de Cable! </h2>
+                <h2>Bajas y cancelaciones</h2>
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="Codigo Del Cliente"/>
+                    <p:inputText value="#{bajasBean.consulta.id_cliente}" />
+                    <p:outputLabel value="Nombre Del Cliente"/>
+                    <p:inputText value="#{bajasBean.consulta.nombre}"/>
+                    <p:column/>
+                    <p:commandButton value="Buscar" action="#{bajasBean.listarTodo()}"/>
+                </h:panelGrid>
+                <h2>Internet</h2>
                 <p:dataTable id="data" value="#{consultaClientesBean.lstclientes}" var="paciente" scrollable="true" scrollHeight="100">
                     <p:column  headerText="Numero Contratacion">
                         <p:outputLabel value="#{paciente.id_contratacion}"/>
@@ -73,41 +73,7 @@
                     </p:column>
                 </p:dataTable>
             </center>
-
-            <p:commandButton value="Consultar"  actionListener="#{consultaClientesBean.listarCable()}" update="form" />
-            <p:commandButton value="Regresar"  />
-            <p:commandButton value="Cancelar"  />
         </h:form>
-
-        <p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="100">
-            <h:outputText value="This is a Modal Dialog." />
-
-            <p:dataTable id="data2" value="#{consultaClientesBean.lstclientes}" var="cliente" scrollable="true" scrollHeight="150">
-                <p:column  headerText="Numero Contratacion">
-                    <p:outputLabel value="#{cliente.id_contratacion}"/>
-                </p:column>
-
-                <p:column headerText="Id Cliente">
-                    <p:outputLabel value="#{cliente.id_cliente}"/>
-                </p:column>
-
-                <p:column headerText="Nombre">
-                    <p:outputLabel value="#{cliente.nombre}"/>
-                </p:column>
-
-                <p:column headerText="Id Paquete">
-                    <p:outputLabel value="#{cliente.id_paquete}"/>
-                </p:column>
-
-                <p:column headerText="Nombre Paquete">
-                    <p:outputLabel value="#{cliente.nom_paquete}"/>
-                </p:column>
-
-                <p:column headerText="Servicio">
-                    <p:outputLabel value="#{cliente.tipo_servicio}"/>
-                </p:column>
-            </p:dataTable>
-        </p:dialog>  
 
     </h:body>
 </html>

@@ -54,10 +54,6 @@ public class UsuariosBean implements Serializable{
         
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("sesion", usuarioSesion);
         
-        
-        
-        
-        
         context.getExternalContext().redirect("faces/nueva.xhtml");
         System.out.println("llega?");
         System.out.println("Se creo todo correctamente");

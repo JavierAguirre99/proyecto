@@ -1,11 +1,12 @@
 package dao;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.ConsultaClientes;
 
-public class consultaClientesDao extends DAO{
+public class BajasDAO extends DAO{
     public List<ConsultaClientes> listar(ConsultaClientes codigo) throws Exception {
         List<ConsultaClientes> lista;
         ResultSet result;
@@ -73,5 +74,5 @@ public class consultaClientesDao extends DAO{
             this.cerrar();
         }
         return lista2;
-    }
+    }    
 }

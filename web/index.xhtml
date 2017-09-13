@@ -10,8 +10,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        <form>
-            gdfagdf
+        <h:form>
+            
                 <div class="content-all">
                     <h2 class="text-register animated tada">Register</h2>
                     <div class="content-login" id="form-login">
@@ -19,7 +19,7 @@
                         <h3 class="animated bounceInDown">Login</h3>
                         <p:inputText p:placeholder="Usuario"  value="#{usuariosBean.usuario.nombre}" class="animated shake"/>
                         <p:password p:placeholder="Contraseña"  value="#{usuariosBean.usuario.contraseña}" class="animated shake"/>
-                        <p:commandButton  value="iniciar" class="animated shake retraso-1" action="#{usuariosBean.listar()}"/>
+                        <p:commandButton  value="iniciar" action="#{usuariosBean.listar()}" class="animated shake retraso-1" />
                         <p>¿Aun no te has registrado? <a href="#form-register">Registrate aquí</a></p>
                     </div>
                     <div class="content-register" id="form-register">
@@ -35,7 +35,7 @@
                     <h2 class="text-login animated shake">Login</h2>
                 </div>
            
-        </form>
+        </h:form>
     </h:body>
 </html>
 
