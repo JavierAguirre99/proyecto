@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Renovacion de Contratos</h1>
+            <h:panelGrid columns="2">
+                <p:outputLabel value="Ingrese el Codigo Del Cliente" />
+                <p:inputText value="#{renovacionBean.contratos.id_cliente}" />
+                <p:column/>
+                <p:commandButton value="Listar" actionListener="#{renovacionBean.listar()}" update="data"/>
+            </h:panelGrid>
+
+            <p:dataTable id="data" value="#{renovacionBean.lstContratos}" var="contratacion" scrollable="true" scrollHeight="100">
+                <p:column  headerText="Id_contratacion">
+                    <p:outputLabel value="#{contratacion.id_contracion}"/>
+                </p:column>
+
+                <p:column headerText="Fecha_Contra">
+                    <p:outputLabel value="#{contratacion.fecha_contratacion}"/>
+                </p:column>
+
+                <p:column headerText="Fecha_Renov">
+                    <p:outputLabel value="#{contratacion.fecha_renovacion}"/>
+                </p:column>
+
+                <p:column headerText="Feche_Culmi">
+                    <p:outputLabel value="#{contratacion.fecha_culminacion}"/>
+                </p:column>
+
+                <p:column headerText="Id_Paquete">
+                    <p:outputLabel value="#{contratacion.id_paquete}"/>
+                </p:column>
+
+                <p:column headerText="Direccion">
+                    <p:outputLabel value="#{contratacion.direccion}"/>
+                </p:column>
+
+                <p:column headerText="Zona">
+                    <p:outputLabel value="#{contratacion.zona}"/>
+                </p:column>
+
+                <p:column headerText="Municipio">
+                    <p:outputLabel value="#{contratacion.id_municipio}"/>
+                </p:column>
+
+                <p:column>
+                    <p:commandButton value="Modificar"  icon="ui-icon-pencil" actionListener="#{renovacionBean.leerID(contratacion)}" oncomplete="PF('wdlgDatos').show();" update=":dlgDatos"/>                    
+                </p:column>
+            </p:dataTable>
+        </h:form>
+        <p:dialog header="Datos" widgetVar="wdlgDatos" id="dlgDatos">
+            <h:form>
+                <center>
+                    <p:panelGrid columns="2">
+                        <p:outputLabel value="Contratacion:"/>
+                        <p:inputText   id="zzz" value="#{renovacionBean.contratos.id_contracion}"/>
+                        <p:outputLabel value="Fecha Contra:"/>
+                        <p:inputText   id="rrr" value="#{renovacionBean.contratos.fecha_contratacion}"/>
+                        <p:outputLabel value="Fecha Renova:"/>
+                        <p:inputText   id="eee" value="#{renovacionBean.contratos.fecha_renovacion}"/>
+                        <p:outputLabel value="Fecha Culminacion:"/>
+
+                        <p:calendar  value="#{renovacionBean.contratos.fecha_culminacion}" pattern="yyyy-MM-dd" mask="true" />
+                        <p:outputLabel value="Id Paquete"/>
+                        <p:inputText   id="qqq" value="#{renovacionBean.contratos.id_paquete}"/>
+                        <p:outputLabel value="Direccion"/>
+                        <p:inputText   id="qqq" value="#{renovacionBean.contratos.direccion}"/>
+                        <p:outputLabel value="Zona"/>
+                        <p:inputText   id="qqq" value="#{renovacionBean.contratos.zona}"/>
+                        <p:outputLabel value="Municipio"/>
+                        <p:inputText   id="qqq" value="#{renovacionBean.contratos.id_municipio}"/>
+                    </p:panelGrid>
+                </center>    
+                <p:commandButton style="background-color:darkcyan" icon="ui-icon-disk" value="Modificar" actionListener="#{pacientesMBean.modificar()}" oncomplete="PF('wdlgDatos').hide();" update=":frm:data"/>
+                <p:commandButton style="background-color: greenyellow" icon=" ui-icon-cancel" value="Cancelar" immediate="true" oncomplete="PF('wdlgDatos').hide();"/>
+
+            </h:form>
+        </p:dialog>
+    </h:body>
+</html>
+

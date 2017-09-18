@@ -7,7 +7,7 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:form  class="form-register animated lightSpeedIn">
+        <h:form id="form" class="form-register animated lightSpeedIn">
 
             <center>
                 <h2>Bajas y cancelaciones</h2>
@@ -15,65 +15,94 @@
                     <p:outputLabel value="Codigo Del Cliente"/>
                     <p:inputText value="#{bajasBean.consulta.id_cliente}" />
                     <p:outputLabel value="Nombre Del Cliente"/>
-                    <p:inputText value="#{bajasBean.consulta.nombre}"/>
+                    <p:inputText />
                     <p:column/>
-                    <p:commandButton value="Buscar" action="#{bajasBean.listarTodo()}"/>
+                    <p:commandButton value="Buscar" action="#{bajasBean.listarTodo()}" update="form" />
                 </h:panelGrid>
                 <h2>Internet</h2>
-                <p:dataTable id="data" value="#{consultaClientesBean.lstclientes}" var="paciente" scrollable="true" scrollHeight="100">
+                <p:dataTable id="data" value="#{bajasBean.listConsultacable}" var="cable" scrollable="true" scrollHeight="100">
                     <p:column  headerText="Numero Contratacion">
-                        <p:outputLabel value="#{paciente.id_contratacion}"/>
+                        <p:outputLabel value="#{cable.id_contratacion}"/>
                     </p:column>
 
                     <p:column headerText="Id Cliente">
-                        <p:outputLabel value="#{paciente.id_cliente}"/>
+                        <p:outputLabel value="#{cable.id_cliente}"/>
                     </p:column>
 
                     <p:column headerText="Nombre">
-                        <p:outputLabel value="#{paciente.nombre}"/>
+                        <p:outputLabel value="#{cable.nombre}"/>
                     </p:column>
 
                     <p:column headerText="Id Paquete">
-                        <p:outputLabel value="#{paciente.id_paquete}"/>
+                        <p:outputLabel value="#{cable.id_paquete}"/>
                     </p:column>
 
                     <p:column headerText="Nombre Paquete">
-                        <p:outputLabel value="#{paciente.nom_paquete}"/>
+                        <p:outputLabel value="#{cable.nom_paquete}"/>
                     </p:column>
 
                     <p:column headerText="Servicio">
-                        <p:outputLabel value="#{paciente.tipo_servicio}"/>
+                        <p:outputLabel value="#{cable.tipo_servicio}"/>
+                    </p:column>
+                    
+                    <p:column>
+                        <p:commandButton value="Dar De Baja"  actionListener="#{bajasBean.eliminar(cable)}" update="data"/>
                     </p:column>
                 </p:dataTable>
 
                 <h2>Servicios Internet</h2>
-                <p:dataTable id="dataint" value="#{consultaClientesBean.lstClientes}" var="Clientes" scrollable="true" scrollHeight="100">
+                <p:dataTable id="dataint" value="#{bajasBean.listConsultaint}" var="internet" scrollable="true" scrollHeight="100">
                     <p:column  headerText="Numero Contratacion">
-                        <p:outputLabel value="#{Clientes.id_contratacion}"/>
+                        <p:outputLabel value="#{internet.id_contratacion}"/>
                     </p:column>
 
                     <p:column headerText="Id Cliente">
-                        <p:outputLabel value="#{Clientes.id_cliente}"/>
+                        <p:outputLabel value="#{internet.id_cliente}"/>
                     </p:column>
 
                     <p:column headerText="Nombre">
-                        <p:outputLabel value="#{Clientes.nombre}"/>
+                        <p:outputLabel value="#{internet.nombre}"/>
                     </p:column>
 
                     <p:column headerText="Id Paquete">
-                        <p:outputLabel value="#{Clientes.id_paquete}"/>
+                        <p:outputLabel value="#{internet.id_paquete}"/>
                     </p:column>
 
                     <p:column headerText="Nombre Paquete">
-                        <p:outputLabel value="#{Clientes.nom_paquete}"/>
+                        <p:outputLabel value="#{internet.nom_paquete}"/>
                     </p:column>
 
                     <p:column headerText="Servicio">
-                        <p:outputLabel value="#{Clientes.tipo_servicio}"/>
+                        <p:outputLabel value="#{internet.tipo_servicio}"/>
+                    </p:column>                                       
+
+                    <p:column>
+                        <p:commandButton value="Dar De Baja"  actionListener="#{bajasBean.eliminar(internet)}" update="dataint"/>
                     </p:column>
                 </p:dataTable>
             </center>
         </h:form>
+        <p:dialog header="Datos" widgetVar="wdlgDatos" id="dlgDatos">
+            <h:form>
+                <center>
+                    <p:panelGrid columns="1">
+                        <p:outputLabel value="Codigo:"/>
+                        <p:inputText   id="zzz" value="#{pacientesMBean.paciente.codpaciente}"/>
+                        <p:outputLabel value="Nombre:"/>
+                        <p:inputText   id="rrr" value="#{pacientesMBean.paciente.nombre}"/>
+                        <p:outputLabel value="Apellido:"/>
+                        <p:inputText   id="eee" value="#{pacientesMBean.paciente.apellido}"/>
+                        <p:outputLabel value="Direccion:"/>
+                        <p:inputText  id="www" value="#{pacientesMBean.paciente.direccion}"/>
+                        <p:outputLabel value="Telefono"/>
+                        <p:inputText   id="qqq" value="#{pacientesMBean.paciente.telefono}"/>
+                    </p:panelGrid>
+                </center>    
+
+                <p:commandButton style="background-color: greenyellow" icon=" ui-icon-cancel" value="Cancelar" immediate="true" oncomplete="PF('wdlgDatos').hide();"/>
+
+            </h:form>
+        </p:dialog>
 
     </h:body>
 </html>
